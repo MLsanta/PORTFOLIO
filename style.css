@@ -158,8 +158,8 @@ body {
 .spinner {
     width: 60px;
     height: 60px;
-    border: 8px solid #ccc;
-    border-top: 8px solid #000;
+    border: 8px solid #f2e0dc;
+    border-top: 8px solid #d92b4c;
     border-radius: 50%;
     animation: spin 1s linear forwards;
 }
