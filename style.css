@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #f2e0dc;
+    width: 100vw;
+}
+.section1 {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+.ibm-plex-sans-kr-regular {
+    font-family: "IBM Plex Sans KR", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mainText {
+    /* font-family: "IBM Plex Sans KR", sans-serif; */
+    font-size: 100px;
+    margin-bottom: -50px;
+    font-weight: 900;
+    color: #d92b4c;
+}
+.mainYear {
+    /* font-family: "IBM Plex Sans KR", sans-serif; */
+    font-size: 100px;
+    margin-bottom: -50px;
+    font-weight: 900;
+    color: #d92b4c;
+}
+.subText {
+    /* font-family: "IBM Plex Sans KR", sans-serif; */
+    font-size: 100px;
+    margin-bottom: -50px;
+    font-weight: 900;
+    color: #d92b4b31;
+}
+
+.textContainer {
+    position: absolute;
+    top: 400px;
+    left: 150px;
+}
+.line1 {
+    width: 200vw;
+    height: 100px;
+    background: linear-gradient(
+        140deg,
+        rgba(210, 47, 77, 0.7) 37%,
+        rgba(12, 156, 108, 0) 60%
+    );
+    position: absolute;
+    top: 700px;
+    rotate: 20deg;
+    transform: translateX(-200px);
+
+    transition: all 0.3s ease 1s;
+    transition-delay: 1s;
+    animation: slideInRight 1.2s ease-out forwards;
+}
+.line2 {
+    width: 200vw;
+    height: 100px;
+    background: linear-gradient(
+        140deg,
+        rgba(210, 47, 77, 0.7) 37%,
+        rgba(12, 156, 108, 0) 60%
+    );
+    position: absolute;
+    top: 700px;
+    rotate: 1100deg;
+    transform: translateX(1200px);
+    transition: all 0.3s ease 0.2s;
+    animation: slideInRight 1.2s ease-out forwards;
+}
+.line3 {
+    width: 200vw;
+    height: 100px;
+    background: linear-gradient(
+        140deg,
+        rgba(210, 47, 77, 0.7) 37%,
+        rgba(12, 156, 108, 0) 60%
+    );
+    position: absolute;
+    top: 700px;
+    rotate: 10deg;
+    transform: translateX(-200px);
+
+    transition: all 0.3s ease 0.3s;
+    animation: slideInRight 1.2s ease-out forwards;
+}
+.line4 {
+    width: 200vw;
+    height: 100px;
+    background: linear-gradient(
+        140deg,
+        rgba(210, 47, 77, 0.7) 37%,
+        rgba(12, 156, 108, 0) 60%
+    );
+    position: absolute;
+    top: 700px;
+    rotate: -190deg;
+    transform: translateX(1700px);
+    /* transform: translateY(200px); */
+
+    transition: all 0.3s ease 0.4s;
+    animation: slideInRight 1.2s ease-out forwards;
+}
+.line5 {
+    width: 200vw;
+    height: 100px;
+    background: linear-gradient(
+        140deg,
+        rgba(210, 47, 77, 0.7) 37%,
+        rgba(12, 156, 108, 0) 60%
+    );
+    position: absolute;
+    top: 700px;
+    rotate: 9deg;
+    transform: translateX(-200px);
+
+    transition: all 0.3s ease 0.5s;
+    animation: slideInRight 1.2s ease-out forwards;
+}
+.line6 {
+    width: 200vw;
+    height: 100px;
+    background: linear-gradient(
+        140deg,
+        rgba(210, 47, 77, 0.7) 37%,
+        rgba(12, 156, 108, 0) 60%
+    );
+    position: absolute;
+    top: 500px;
+    rotate: 3deg;
+    transform: translateX(-200px);
+
+    transition: all 0.3s ease 0.6s;
+    animation: slideInRight 1.2s ease-out forwards;
+}
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #ccc;
+    border-top: 8px solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear forwards;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-200vw);
+    }
+    100% {
+        transform: translateX(200vw);
+    }
+}
+
+/* 오른쪽 바깥 → 화면 안으로 */
+@keyframes slideInRight {
+    0% {
+        transform: translateX(200vw);
+    }
+    100% {
+        transform: translateX(-200vw);
+    }
+}
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mainYear,
+.mainText {
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+.subText {
+    opacity: 0;
+    animation: fadeDown 1s ease-out forwards;
+}
+/* 텍스트 순차 등장 */
+.mainYear {
+    animation-delay: 0.8s;
+}
+.mainText {
+    animation-delay: 1.1s;
+}
+.subText1 {
+    animation-delay: 1.4s;
+}
+.subText2 {
+    animation-delay: 1.7s;
+}
+.subText3 {
+    animation-delay: 2s;
+}
+
+.section2 {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 5;
+}
+.imgCard1 {
+    width: 700px;
+    height: 150px;
+    background-color: #d9b3b0;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    border-bottom-right-radius: 150px;
+    border-top-right-radius: 150px;
+}
+.imgCard2 {
+    width: 700px;
+    height: 150px;
+    background-color: #d9b3b0;
+    position: absolute;
+    top: calc(10% + 180px);
+    left: 15%;
+    border-bottom-left-radius: 150px;
+    border-top-left-radius: 150px;
+}
+
+.imgCard3 {
+    width: 700px;
+    height: 150px;
+    background-color: #d9b3b0;
+    position: absolute;
+    top: calc(10% + 360px);
+    left: 15%;
+    border-bottom-right-radius: 150px;
+    border-top-right-radius: 150px;
+}
+
+.imgCard4 {
+    width: 700px;
+    height: 150px;
+    background-color: #d9b3b0;
+    position: absolute;
+    top: calc(10% + 540px);
+    left: 15%;
+    border-bottom-left-radius: 150px;
+    border-top-left-radius: 150px;
+}
+.face {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    right: 15%;
+    top: 10%;
+    background-color: rgb(255, 255, 255);
+
+    z-index: 10;
+    background-image: url(./src/img/face.jpg);
+    background-size: contain;
+    border-radius: 15px;
+}
+.stackScroll {
+    width: 350px;
+    height: 150px;
+    /* background-color: #fff; */
+    position: absolute;
+    z-index: 10;
+    top: 60%;
+    right: calc(15% - 25px);
+    overflow: hidden;
+}
+
+.scrollWrapper {
+    display: flex;
+    width: calc(200%); /* 복사 이미지 포함 */
+    animation: scroll 20s linear infinite;
+}
+
+.scrollWrapper img {
+    width: 100px; /* 원하는 이미지 크기 */
+    margin-right: 20px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* 롤링 애니메이션 */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-150%);
+    }
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+    background-color: #ddd;
+    border-radius: 15px;
+}
+.imgCard2 .img,
+.imgCard4 .img {
+    position: absolute;
+    left: 71.5%;
+    transform: translateY(-25px);
+}
+.imgCard1 .img,
+.imgCard3 .img {
+    transform: translateY(-25px);
+}
+.imgCard1 .desc p {
+    position: absolute;
+    left: 230px;
+    top: 60px;
+    color: #72403f;
+    z-index: 20;
+    font-size: 20px;
+}
+.imgCard3 .desc p {
+    position: absolute;
+    left: 230px;
+    top: 60px;
+    color: #72403f;
+    z-index: 20;
+    font-size: 20px;
+}
+.imgCard3 .img {
+    background-image: url(./src/SFT.PNG);
+    background-size: contain;
+}
+.imgCard1 .img {
+    background-image: url(./src/ITA.PNG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -40px 0;
+}
+.imgCard2 .img {
+    background-image: url(./src/SITB.PNG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -0 0;
+}
+.imgCard2 .desc p {
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    color: #72403f;
+    z-index: 20;
+    font-size: 20px;
+}
+.imgCard4 .img {
+    background-image: url(./src/REOM.PNG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -0 0;
+}
+.imgCard4 .desc p {
+    position: absolute;
+    left: 110px;
+    top: 60px;
+    color: #72403f;
+    z-index: 20;
+    font-size: 20px;
+}
+/* 왼쪽 → 오른쪽 */
+@keyframes slideInLeftCard {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 오른쪽 → 왼쪽 */
+@keyframes slideInRightCard {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 초기 상태 */
+.imgCard1,
+.imgCard3 {
+    opacity: 0;
+}
+
+.imgCard2,
+.imgCard4 {
+    opacity: 0;
+}
+
+/* 보여질 때 적용될 클래스 */
+.showLeft {
+    animation: slideInLeftCard 1s forwards;
+}
+
+.showRight {
+    animation: slideInRightCard 1s forwards;
+}
