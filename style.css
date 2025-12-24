@@ -242,57 +242,50 @@ body {
 }
 .imgCard1 {
     width: 700px;
-    height: 150px;
-    background-color: #d9b3b0;
+    height: 75px;
+    background-color: #d92b4c;
     position: absolute;
-    top: 10%;
+    top: calc(10%);
     left: 15%;
-    border-bottom-right-radius: 150px;
-    border-top-right-radius: 150px;
 }
 .imgCard2 {
     width: 700px;
-    height: 150px;
-    background-color: #d9b3b0;
+    height: 75px;
+    background-color: #d92b4c;
     position: absolute;
     top: calc(10% + 180px);
     left: 15%;
-    border-bottom-left-radius: 150px;
-    border-top-left-radius: 150px;
 }
 
 .imgCard3 {
     width: 700px;
-    height: 150px;
-    background-color: #d9b3b0;
+    height: 75px;
+    background-color: #d92b4c;
     position: absolute;
     top: calc(10% + 360px);
     left: 15%;
-    border-bottom-right-radius: 150px;
-    border-top-right-radius: 150px;
 }
 
 .imgCard4 {
     width: 700px;
-    height: 150px;
-    background-color: #d9b3b0;
+    height: 75px;
+    background-color: #d92b4c;
     position: absolute;
     top: calc(10% + 540px);
     left: 15%;
-    border-bottom-left-radius: 150px;
-    border-top-left-radius: 150px;
 }
 .face {
-    width: 300px;
-    height: 400px;
+    width: 550px;
+    height: 1500px;
     position: absolute;
     right: 15%;
-    top: 10%;
-    background-color: rgb(255, 255, 255);
+    top: -55%;
+    background-color: rgba(0, 0, 0, 0);
 
     z-index: 10;
-    background-image: url(./src/img/face.jpg);
-    background-size: contain;
+    background-image: url(./src/img/img4.png);
+    background-size: cover;
+    background-position: center;
     border-radius: 15px;
 }
 .stackScroll {
@@ -300,9 +293,9 @@ body {
     height: 150px;
     /* background-color: #fff; */
     position: absolute;
-    z-index: 10;
-    top: 60%;
-    right: calc(15% - 25px);
+    z-index: 50;
+    top: 50%;
+    right: calc(15%);
     overflow: hidden;
 }
 
@@ -348,16 +341,16 @@ body {
 .imgCard1 .desc p {
     position: absolute;
     left: 230px;
-    top: 60px;
-    color: #72403f;
+    top: 24px;
+    color: white;
     z-index: 20;
     font-size: 20px;
 }
 .imgCard3 .desc p {
     position: absolute;
     left: 230px;
-    top: 60px;
-    color: #72403f;
+    top: 24px;
+    color: white;
     z-index: 20;
     font-size: 20px;
 }
@@ -380,8 +373,8 @@ body {
 .imgCard2 .desc p {
     position: absolute;
     left: 30px;
-    top: 60px;
-    color: #72403f;
+    top: 24px;
+    color: white;
     z-index: 20;
     font-size: 20px;
 }
@@ -394,8 +387,8 @@ body {
 .imgCard4 .desc p {
     position: absolute;
     left: 110px;
-    top: 60px;
-    color: #72403f;
+    top: 24px;
+    color: white;
     z-index: 20;
     font-size: 20px;
 }
