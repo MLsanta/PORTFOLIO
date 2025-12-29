@@ -65,3 +65,60 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+window.addEventListener("load", () => {
+    const section3 = document.querySelector(".section3");
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    section3.classList.add("active");
+                    observer.unobserve(section3); // 최초 실행 후 관찰 중지
+                }
+            });
+        },
+        { threshold: 0.3 }
+    );
+
+    observer.observe(section3);
+});
+window.addEventListener("load", () => {
+    // 로딩 화면 숨기기
+    const loading = document.querySelector(".loading-overlay");
+    if (loading) loading.style.display = "none";
+
+    const section3 = document.querySelector(".section3");
+    const cards = [
+        document.querySelector(".card1"),
+        document.querySelector(".card2"),
+        document.querySelector(".card3"),
+        document.querySelector(".card4"),
+    ];
+
+    // IntersectionObserver 설정
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // section3 라인 등장
+                    section3.classList.add("active");
+
+                    // 카드 순차 등장
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add("show");
+                        }, index * 200); // 0.2초 간격
+                    });
+
+                    observer.unobserve(section3); // 한 번만 실행
+                }
+            });
+        },
+        {
+            threshold: 0.3, // 요소가 조금이라도 들어오면 체크
+            rootMargin: "-20% 0px 0px 0px", // 화면 상단에서 30% 위쪽에 도달했을 때 발동
+        }
+    );
+
+    observer.observe(section3);
+});
