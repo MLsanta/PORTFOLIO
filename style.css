@@ -570,7 +570,7 @@ body {
 .s3line2,
 .s3line3,
 .s3line4 {
-    width: 100px;
+    width: 250px;
     height: 700px;
     background: linear-gradient(
         180deg,
@@ -579,23 +579,23 @@ body {
     );
     position: absolute;
     top: 10%;
-    transform: translateX(-50px);
+    transform: translateX(150px);
     opacity: 0;
+    right: 10%;
 }
 
 .s3line1 {
-    left: calc(100% / 7 * 2);
+    left: calc(100% / 6 * 1 + 50px);
 }
 .s3line2 {
-    left: calc(100% / 7 * 3);
+    left: calc(100% / 6 * 2 + 50px);
 }
 .s3line3 {
-    left: calc(100% / 7 * 4);
+    left: calc(100% / 6 * 3 + 50px);
 }
 .s3line4 {
-    left: calc(100% / 7 * 5);
+    left: calc(100% / 6 * 4 + 50px);
 }
-
 /* section3 진입 시 라인 등장 */
 .section3.active .s3line1 {
     animation: riseFadeUp 0.5s ease-out forwards;
@@ -634,10 +634,10 @@ body {
 .card3,
 .card4 {
     width: 250px;
-    height: 600px;
+    height: 400px;
     background-color: #d92b4c;
     position: absolute;
-    bottom: 250px; /* 화면 하단 기준 */
+    bottom: 300px; /* 화면 하단 기준 */
     border-radius: 10px;
     opacity: 0;
     z-index: 10;
@@ -645,16 +645,16 @@ body {
 
 /* 카드 위치 s3line 중심 맞춤 */
 .card1 {
-    left: calc(100% / 7 * 2 - 125px);
+    left: calc(100% / 6 * 1);
 }
 .card2 {
-    left: calc(100% / 7 * 3 - 125px);
+    left: calc(100% / 6 * 2);
 }
 .card3 {
-    left: calc(100% / 7 * 4 - 125px);
+    left: calc(100% / 6 * 3);
 }
 .card4 {
-    left: calc(100% / 7 * 5 - 125px);
+    left: calc(100% / 6 * 4);
 }
 
 /* 카드 등장 애니메이션 */
@@ -707,6 +707,16 @@ body {
 }
 .card2 .inCard {
     background-image: url(./src/2048.PNG);
+    background-size: cover;
+    background-position: center;
+}
+.card3 .inCard {
+    background-image: url(./src/brick.PNG);
+    background-size: cover;
+    background-position: center;
+}
+.card4 .inCard {
+    background-image: url(./src/calc.PNG);
     background-size: cover;
     background-position: center;
 }
